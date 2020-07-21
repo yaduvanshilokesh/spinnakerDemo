@@ -7,7 +7,7 @@ sh 'docker build -t asia.gcr.io/testproject2-261014/spinnakerdemo:v${BUILD_NUMBE
 sh 'docker push asia.gcr.io/testproject2-261014/spinnakerdemo'
 }
 stage('Create and archive properties file'){
-sh label: '', script: 'echo "imagetag: \'${BUILD_NUMBER}\'" > config.properties'
+sh label: '', script: 'echo imagetag: v${BUILD_NUMBER} > config.properties'
 archive 'config.properties'
 }
 }
